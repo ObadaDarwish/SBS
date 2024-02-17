@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { USERS_API } from "../../API/users.api";
+import { USERS_API } from "../../API";
 import { IUserAlbum, IUsers } from "../../../Types/Users.types";
 import { RootState } from "../../index";
 
@@ -41,6 +41,5 @@ const usersSlice = createSlice({
       ),
 });
 
-// export const {} = usersSlice.actions;
 export const getUsersFullState = (state: RootState) => state.users;
 export default usersSlice.reducer;

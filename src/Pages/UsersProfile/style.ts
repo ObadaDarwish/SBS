@@ -1,10 +1,16 @@
 import styled from "styled-components";
-import { Box, Card, darken, lighten } from "@mui/material";
+import { Box, Card, lighten, colors } from "@mui/material";
 
 export const UserProfileCard = styled(Card)`
   padding: 70px 30px;
   display: flex;
   height: 350px;
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+  }
 `;
 
 export const AvatarWrapper = styled(Box)`
@@ -17,6 +23,9 @@ export const AvatarWrapper = styled(Box)`
   p {
     font-weight: bold;
   }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    padding: 20px;
+  }
 `;
 
 export const InfoContainer = styled(Box)`
@@ -24,6 +33,9 @@ export const InfoContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    padding: 0;
+  }
 `;
 
 export const InfoWrapper = styled(Box)`
@@ -37,6 +49,9 @@ export const InfoWrapper = styled(Box)`
     font-weight: bold;
     color: #000;
   }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    margin: 5px 0;
+  }
 `;
 export const UserAlbumsCard = styled(Card)`
   margin-top: 10px;
@@ -45,9 +60,8 @@ export const UserAlbumsCard = styled(Card)`
   flex-flow: row wrap;
 
   .album {
-    background-color: ${({ theme }) =>
-      darken(theme.palette.primary.light, 0.3)};
-    color: ${({ theme }) => theme.palette.background.paper};
+    background-color: ${colors.orange[800]};
+    color: ${({ theme }) => theme.palette.text.main};
     padding: 10px;
     margin: 10px;
     width: 200px;
@@ -57,9 +71,16 @@ export const UserAlbumsCard = styled(Card)`
     justify-content: center;
     align-items: center;
     &:hover {
-      background-color: ${({ theme }) => theme.palette.primary.light};
+      background-color: ${colors.orange[600]};
       cursor: pointer;
       transition: background-color 0.3s;
+    }
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    padding: 10px;
+    .album {
+      width: 100%;
+      height: 60px;
     }
   }
 `;

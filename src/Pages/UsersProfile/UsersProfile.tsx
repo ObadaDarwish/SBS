@@ -76,8 +76,15 @@ const UsersProfile = () => {
         </InfoContainer>
       </UserProfileCard>
       <UserAlbumsCard>
-        {userAlbums.map((album) => (
-          <div className={"album"}>{album.title}</div>
+        {userAlbums.map(({ title, id, userId }) => (
+          <div
+            className={"album"}
+            onClick={() =>
+              navigate(`/${userId}/album/${id}`, { state: { title: title } })
+            }
+          >
+            {title}
+          </div>
         ))}
       </UserAlbumsCard>
     </Box>

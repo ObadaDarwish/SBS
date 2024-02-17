@@ -4,6 +4,7 @@ import { ROUTER_PATHS } from "./constants";
 
 import Users from "./Pages/Users";
 import UsersProfile from "./Pages/UsersProfile";
+import UsersAlbum from "./Pages/UsersAlbum";
 const router = createBrowserRouter([
   {
     path: ROUTER_PATHS.DEFAULT,
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <UsersProfile />,
+      },
+      {
+        path: ":id/album/:albumId",
+        element: <UsersAlbum />,
       },
     ],
   },

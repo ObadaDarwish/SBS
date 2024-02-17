@@ -56,11 +56,7 @@ const UsersAlbum = () => {
       </Box>
       <Box>
         <Card>
-          <ImageList
-            sx={{ width: "100%" }}
-            cols={isTablet ? 3 : 6}
-            rowHeight={164}
-          >
+          <ImageList sx={{ width: "100%" }} cols={isTablet ? 3 : 6}>
             {albumImages.map((item) => (
               <ImageListItem key={item.thumbnailUrl}>
                 <img

@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/preact": "^3.2.3",
     "prettier": "3.2.5"
   }
 }

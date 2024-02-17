@@ -8,6 +8,7 @@ import { useGetUsersQuery } from "../../Store/API/users.api";
 import { IUsers } from "../../Types/Users.types";
 import { useSelector } from "react-redux";
 import { getUsersFullState } from "../../Store/Reducers/Users/Users.slice";
+import { Box, Typography } from "@mui/material";
 
 const Users = () => {
   const { isLoading } = useGetUsersQuery();
@@ -42,14 +43,20 @@ const Users = () => {
       Cell: ({ company: { name } }) => <div>{name}</div>,
     },
   ];
-  if (isLoading) {
-    return <div>Loading</div>;
-  }
   return (
-    <MaterialTable
-      columnsData={columns}
-      rowData={usersList as unknown as IUsers[]}
-    />
+    <Box>
+      <Box mb={2}>
+        <Typography variant={"h6"}>Users</Typography>
+      </Box>
+      {isLoading ? (
+        <div>Loading</div>
+      ) : (
+        <MaterialTable
+          columnsData={columns}
+          rowData={usersList as unknown as IUsers[]}
+        />
+      )}
+    </Box>
   );
 };
 

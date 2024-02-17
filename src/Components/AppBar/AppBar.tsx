@@ -12,6 +12,7 @@ const AppBarComponent = () => {
     <StyledAppBar position="sticky">
       <Toolbar>
         <Typography
+          role={"AppBar-heading"}
           variant="h6"
           component="div"
           color={theme.palette.info.contrastText}

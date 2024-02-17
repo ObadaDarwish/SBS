@@ -2116,7 +2116,7 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
-"@testing-library/dom@^8.5.0":
+"@testing-library/dom@^8.11.1", "@testing-library/dom@^8.5.0":
   version "8.20.1"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.20.1.tgz#2e52a32e46fc88369eef7eef634ac2a192decd9f"
   integrity sha512-/DiOQ5xBxgdYRC8LNk7U+RWat0S3qRLeIw3ZIkMQ9kkVlRmwD/Eg8k8CqIpD6GW7u20JIUOfMKbxtiLutpjQ4g==
@@ -2144,6 +2144,13 @@
     dom-accessibility-api "^0.5.6"
     lodash "^4.17.15"
     redent "^3.0.0"
+
+"@testing-library/preact@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@testing-library/preact/-/preact-3.2.3.tgz#0d331b7a7f934a4b0fc6c95ff3a9e1d6fa93094e"
+  integrity sha512-y6Kklp1XK3f1X2fWCbujmJyzkf+1BgLYXNgAx21j9+D4CoqMTz5qC4SQufb1L6q/jxLGACzrQ90ewVOTBvHOfg==
+  dependencies:
+    "@testing-library/dom" "^8.11.1"
 
 "@testing-library/react@^13.4.0":
   version "13.4.0"

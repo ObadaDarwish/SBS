@@ -1,9 +1,12 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import "@testing-library/jest-dom";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("Find header and click to navigate", async () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  await screen.findByRole("AppBar-heading");
+  await userEvent.click(screen.getByRole("AppBar-heading"));
+  expect(screen.getByText("Users")).toBeTruthy();
 });
